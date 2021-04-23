@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  validate-password:
+    image: 'validate-password:latest'
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: validate-password-service
+    ports:
+      - 8080:8080
