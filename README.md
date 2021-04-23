@@ -55,14 +55,14 @@ Api Doc: http://localhost:8080/swagger-ui/index.html
 
 * Utilização do framework `Spring Boot` por ser uma ferramenta robusta e bastante utilizada no
   mundo java;
-* Procurado utilizar solução mais prática com menos codificação, assim gerando mais 
-legibilidade e entendimento do código com `Pattern de Regex`; 
 * Utilizando regex, pode-se deixar a cargo do próprio framework para validar já na entrada do endpoint,
 com isso não há necessidade criar outra camada(classes de serviço por exemplo) para tratamento de regras. 
   Deve-se apenas configurar a mensagem de retorno quando a validação falhar(ou seja: `false`)
 * Foi utilizado para documentar a API o plugin SpringFox. Assim para evitar de 
 "poluir" a classe (`PasswordValidatorImplController.java`) com configurações de documentação  optou-se por criar uma    interface (`PasswordValidatorController.java`) onde foram configurados os detalhes da documentação para o plugin 
   e a classe concreta `PasswordValidatorImplController.java` implementando a interface.
+* Procurado utilizar solução mais prática com menos codificação, assim gerando mais 
+legibilidade e entendimento do código com `Pattern de Regex`(detalhe do pattern abaixo);   
   
 ````regexp
 ^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%^&*()-+])(?:([A-Za-z\d!@#$%^&*()-+\S])(?!.*\1)){9,}$
